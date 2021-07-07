@@ -46,8 +46,8 @@ jobs:
       run: |
         echo "List the aliases"
         alias
-        alias gfortran="gfortran-11"
-        gfortran --version
+        # alias gfortran="gfortran-11"
+        gfortran-11 --version
 
     - name: Build
       shell: bash
