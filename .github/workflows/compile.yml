@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_linux:
     # The CMake configure and build commands are platform agnostic and should work equally
     # well on Windows or Mac.  You can convert this to a matrix build if you need
     # cross-platform coverage.
@@ -24,6 +24,28 @@ jobs:
 
     - name: Show gfortran version
       run: gfortran --version
+
+    - name: Build
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run: |
+        make OS=linux64 ENV=gfortran64 all
+        make OS=linux64 ENV=gfortran64 install
+
+  build_osx:
+    # The CMake configure and build commands are platform agnostic and should work equally
+    # well on Windows or Mac.  You can convert this to a matrix build if you need
+    # cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Show gfortran version
+      run: |
+      alias gfortran="gfortran-11"
+      gfortran --version
 
     - name: Build
       shell: bash
