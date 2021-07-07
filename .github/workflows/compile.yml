@@ -44,6 +44,8 @@ jobs:
 
     - name: Show gfortran version
       run: |
+        echo "List the aliases"
+        alias
         alias gfortran="gfortran-11"
         gfortran --version
 
