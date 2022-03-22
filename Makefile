@@ -74,7 +74,7 @@ C99_SOURCES = $(wildcard $(SRC_DIR)/*.c)
 F77_OBJS = $(patsubst $(SRC_DIR)/%.f,$(BIN_DIR)/%.o,$(F77_SOURCES))
 C99_OBJS = $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%.o,$(C99_SOURCES))
 
-$(BIN_DIR)/onera_desp_lib.o : $(SRC_DIR)/fortran_version.inc $(SRC_DIR)/fortran_release.inc
+$(BIN_DIR)/libirbem.o : $(SRC_DIR)/fortran_version.inc $(SRC_DIR)/fortran_release.inc
 
 $(BIN_DIR)/%.o : $(SRC_DIR)/%.f
 	$(FC) $(FFLAGS) -c -o $@ $< 

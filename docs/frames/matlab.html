@@ -56,7 +56,7 @@
 	    <li> Add "irbem\data" to your Matlab path
 	    <li> Click "Save" to save your new Matlab path for future sessions
 	    <li> Download the <a href = "http://sourceforge.net/p/irbem/code/HEAD/tree/trunk/onera_desp_lib_Win32_x86.dll?format=raw">32-bit</a>
-	      windows DLL and <b>save it as "irbem\matlab\onera_desp_lib.dll"</b>
+	      windows DLL and <b>save it as "irbem\matlab\libirbem.dll"</b>
 	  </el>
 
     </p>
@@ -65,9 +65,9 @@
     <font face="ARIAL, HELVETICA"><font size=+1><a name=WindowsInstallation><b>Sort of easy way for 64-bit windows users:</b>
 	  <ul>
 	    <li> Do all the steps above, except download the <a href = "http://sourceforge.net/p/irbem/code/HEAD/tree/trunk/onera_desp_lib_Win64_x86.dll?format=raw">64-bit</a>
-	      windows DLL and <b>save it as "irbem\matlab\onera_desp_lib.dll"</b>
+	      windows DLL and <b>save it as "irbem\matlab\libirbem.dll"</b>
 	    <li> Then you have to install the latest free Microsoft Visual Studio, including its "redistributables" (these are DLLs needed by the IRBEM library and Matlab requires this compiler to acceass any DLL)
-	    <li> Then you have to add the following DLLs to the matlab folder where onera_desp_lib.dll resides. (We're working on a version of the DLL that does not have these dependencies):
+	    <li> Then you have to add the following DLLs to the matlab folder where libirbem.dll resides. (We're working on a version of the DLL that does not have these dependencies):
 	      <ul>
 		<li> (Except where noted, these are part of cygwin64, but can sometimes be found on-line without installing it)
 		<li> libgcc_s_seh-1.dll
@@ -86,8 +86,8 @@
         <font face="ARIAL, HELVETICA"><font size=+1><b>Hard way for everyone else:</b>
 	  The IRBEM make file (call <i>make help</i> from irbem/trunk) will create
         the shared library file for use with IDL or Matlab. A copy of the shared library is
-        created in the "matlab" subdirectory, and is given a name "onera_desp_lib.dll" or
-        "onera_desp_lib.so" depending on the platform. Thus, in order to access the library
+        created in the "matlab" subdirectory, and is given a name "libirbem.dll" or
+        "libirbem.so" depending on the platform. Thus, in order to access the library
         and the wrappers, the user needs only add the "matlab" subdirectory (e.g. "c:\irbem\matlab")
         to the Matlab path. In order for the library to easily locate the data files that
         it needs, it is also advisable to add the "data" subdirectory to the Matlab path.

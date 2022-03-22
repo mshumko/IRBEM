@@ -20,7 +20,7 @@ mpicc -s -O3 -o multi_Lstar_hmin.mpix multi_Lstar_hmin.c -lgfortran -lm -lonerad
 #define MY_MPI_TAG_VARINPUT (2)
 #define MY_MPI_TAG_OUTPUT   (3)
 
-/* from onera_desp_lib.h */
+/* from libirbem.h */
 void drift_bounce_orbit2_1_(int *kext, int *options,
 			    int *sysaxes, int *iyear,
 			    int *idoy, double * UT,

@@ -29,9 +29,9 @@ function info = onera_desp_lib_load(libfile,headerfile)
 % checks the environment variable IRBEM_THUNK_TMP_PATH to specify where to 
 % create the thunkfile (64-bit systems only), otherwise let's matlab decide
 
-if ~libisloaded('onera_desp_lib')
+if ~libisloaded('libirbem')
     if nargin < 2
-        headerfile = 'onera_desp_lib.h';
+        headerfile = 'libirbem.h';
     end
     
     % determine DLL extension
@@ -47,7 +47,7 @@ if ~libisloaded('onera_desp_lib')
         if ~isempty(getenv('IRBEM_LIB_DLL'))
             libfile = getenv('IRBEM_LIB_DLL');
         else
-            libfile = ['onera_desp_lib.',libext];
+            libfile = ['libirbem.',libext];
         end
     end
     if ~exist(libfile,'file')
@@ -68,4 +68,4 @@ end
 
 
 % command to generate proto file -- don't do this anymore as it creates problems for 64-bit machines
-% loadlibrary('onera_desp_lib.dll','onera_desp_lib.h','alias','onera_desp_lib','mfilename','onera_desp_lib_proto.m'); disp('remember to move the proto file');
+% loadlibrary('libirbem.dll','libirbem.h','alias','onera_desp_lib','mfilename','onera_desp_lib_proto.m'); disp('remember to move the proto file');
