@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "IRBEM"
+version = "0.1.0"
+description = "Python wrapper for IRBEM"
+authors = [ { name = "Mykhaylo Shumko", email = "msshumko@gmail.com" } ]
+
+[project.urls]
+Documentation = "https://prbem.github.io/IRBEM/"
+Source = "https://github.com/PRBEM/IRBEM"
+
+dependencies = [
+  "wheel",
+  "python-dateutil",
+  "numpy>=1.12",
+  "scipy>=0.14",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["IRBEM"]

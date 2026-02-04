@@ -1,5 +1,0 @@
-wheel
-python-dateutil
-numpy >= 1.12
-scipy >= 0.14
--e .
